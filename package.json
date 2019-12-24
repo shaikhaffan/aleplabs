@@ -1,0 +1,56 @@
+{
+  "name": "aleplabs",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.7.1",
+    "apisauce": "1.1.1",
+    "format-json": "1.0.3",
+    "identity-obj-proxy": "3.0.0",
+    "native-base": "^2.13.8",
+    "prop-types": "15.7.2",
+    "querystringify": "2.1.1",
+    "ramda": "0.26.1",
+    "ramdasauce": "^2.1.3",
+    "react": "16.8.6",
+    "react-native": "0.60.5",
+    "react-native-gesture-handler": "^1.5.0",
+    "react-native-linear-gradient": "^2.5.6",
+    "react-native-reanimated": "1.4.0",
+    "react-native-size-matters": "^0.3.0",
+    "react-native-splash-screen": "^3.2.0",
+    "react-native-vector-icons": "^6.6.0",
+    "react-navigation": "^4.0.10",
+    "react-navigation-redux-helpers": "4.0.1",
+    "react-navigation-stack": "^1.10.3",
+    "react-navigation-tabs": "^2.6.2",
+    "react-redux": "7.1.3",
+    "redux": "4.0.4",
+    "redux-saga": "1.1.3",
+    "reduxsauce": "1.1.1",
+    "seamless-immutable": "7.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/runtime": "^7.7.7",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-ignite-ignore-reactotron": "0.3.0",
+    "eslint": "^6.8.0",
+    "jest": "^24.9.0",
+    "jetifier": "^1.6.4",
+    "metro-react-native-babel-preset": "^0.57.0",
+    "react-test-renderer": "16.8.6",
+    "reactotron-react-native": "4.0.2",
+    "reactotron-redux": "3.1.2",
+    "reactotron-redux-saga": "4.2.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
