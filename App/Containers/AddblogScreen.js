@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, KeyboardAvoidingView,View,TextInput, TouchableWithoutFeedback,ActivityIndicator} from 'react-native'
+import { Alert,ScrollView, Text, KeyboardAvoidingView,View,TextInput, TouchableWithoutFeedback,ActivityIndicator} from 'react-native'
 import { scale } from "react-native-size-matters";
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { ApplicationStyles,Colors } from '../Themes';
@@ -14,21 +14,13 @@ import HeaderComponent from '../Components/Header';
 import styles from './Styles/AddblogScreenStyle'
 import {
   Container,
-  Title,
   Content,
-  Footer,
-  FooterTab,
-  Button,
-  Left,
-  Right,
-  Body,
-  Card,
-  Header,
   Toast,
   Root,
-  Spinner,
   root
 } from "native-base";
+
+
 class AddblogScreen extends Component {
 
   constructor(props){
@@ -49,14 +41,29 @@ class AddblogScreen extends Component {
       duration:2500
     })
   }
+  validate = async (state)=>{
+    if(state.title == ""){
+      Alert.alert("Please Enter The Blog Title")
+    }
+    else if(state.body == ""){
+      Alert.alert("Please Enter The Blog Cntent")
+    }else{
+      return true
+    }
+    return false;
+  }
   
-  blogAction = ()=>{
-    this.setState({fetching:true})
-     let data = {
-      title:this.state.title,
-      body:this.state.body
-    };
-    this.props.addBlog(data)
+  blogAction =async  ()=>{
+    let isValidate = await this.validate(this.state);
+
+    if(isValidate){
+     this.setState({fetching:true})
+      let data = {
+        title:this.state.title,
+        body:this.state.body
+      };
+      this.props.addBlog(data)
+      }
   }
 
   navigatePage = (page,content) =>{
@@ -88,8 +95,7 @@ class AddblogScreen extends Component {
 
   render () {
     console.log(this.props.homeData);
-    return (
-      
+    return (      
       <Root>
       <Container>
       <View  style={[(this.state.fetching == true)? styles.activityIndicator :styles.styleNothing ]}>

@@ -74,12 +74,10 @@ export function * addBlog (api, action) {
 
 export function * editBlog (api, action) {
   const { data } = action
-  console.log("sagas",api,"data",data)
   // get current data from Store
   // const currentData = yield select(HomeSelectors.getData)
   // make the call to the api
   const response = yield call(api.editPost,data);
-  console.log(response);
 
   // success?
   if (response.ok) {

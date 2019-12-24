@@ -40,14 +40,17 @@ class EditblogScreen extends Component {
   
   }
 
-  blogAction = ()=>{
-    this.setState({fetching:true})
-    let data =  {
-      id : this.props.navigation.state.params.blogData.id, 
-      title:this.state.title,
-      body:this.state.body,
-    };
-    this.props.editBloged(data);
+  blogAction = async ()=>{
+    let isValidate = await this.validate(this.state);
+    if(isValidate){
+      this.setState({fetching:true})
+      let data =  {
+        id : this.props.navigation.state.params.blogData.id, 
+        title:this.state.title,
+        body:this.state.body,
+      };
+      this.props.editBloged(data);
+    }
   }
  
   goBack = ()=>{
@@ -77,6 +80,18 @@ class EditblogScreen extends Component {
       this.callToast("SomeThing Went Wrong.","Danger")
     } 
     this.setState({fetching:nextProps.homeData.fetching})
+  }
+
+  validate = async (state)=>{
+    if(state.title == ""){
+      Alert.alert("Please Enter The Blog Title")
+    }
+    else if(state.body == ""){
+      Alert.alert("Please Enter The Blog Cntent")
+    }else{
+      return true
+    }
+    return false;
   }
 
   render () {

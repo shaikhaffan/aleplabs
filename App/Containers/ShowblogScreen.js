@@ -7,16 +7,7 @@ import { connect } from 'react-redux'
 import HeaderComponent from '../Components/Header';
 import {
   Container,
-  Title,
   Content,
-  Footer,
-  FooterTab,
-  Button,
-  Left,
-  Right,
-  Body,
-  Card,
-  Header
 } from "native-base";
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'

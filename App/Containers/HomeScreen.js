@@ -10,16 +10,7 @@ import SplashScreen from 'react-native-splash-screen';
 import Blog from '../Components/Blog';
 import {
   Container,
-  Title,
   Content,
-  Footer,
-  FooterTab,
-  Button,
-  Left,
-  Right,
-  Body,
-  Card,
-  Header,
   Toast,
   Root
 } from "native-base";
@@ -31,6 +22,32 @@ import HomeAction from "../Redux/HomeRedux";
 // Styles
 import styles from './Styles/commonScreenStyle'
 class HomeScreen extends Component {
+  static navigationOptions = {
+    headerMode: 'none',
+    tabBarOptions: {
+      showIcon: true,
+      showLabel: false,
+      activeTintColor: "#f8d224",
+      inactiveTintColor: "#000000",
+      style: {
+        backgroundColor: "transparent",
+        borderTopWidth: 1,
+        borderTopColor: "#ffffff10"
+      }
+    },
+    tabBarIcon: ({ focused, tintColor }) => {
+      return (
+        <View style={{ justifyContent: "center", alignItems: "center" }}>
+            <Icon name='home' size={scale(25)} color={(focused) ? Colors.storePurpuleColor: Colors.storeTextColor} /> 
+          <Text style={{ fontSize: scale(10) }}>Home</Text>
+        </View>
+      );
+    },
+    tabBarOnPress: ({ defaultHandler, navigation }) => {
+      const { routeName } = navigation.state;
+       defaultHandler();
+    }
+  };
 
   constructor(props) {
     super(props);
@@ -58,35 +75,7 @@ class HomeScreen extends Component {
    
   }
 
- 
-
-
-  static navigationOptions = {
-    headerMode: 'none',
-    tabBarOptions: {
-      showIcon: true,
-      showLabel: false,
-      activeTintColor: "#f8d224",
-      inactiveTintColor: "#000000",
-      style: {
-        backgroundColor: "transparent",
-        borderTopWidth: 1,
-        borderTopColor: "#ffffff10"
-      }
-    },
-    tabBarIcon: ({ focused, tintColor }) => {
-      return (
-        <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <Icon name='home' size={scale(25)} color={(focused) ? Colors.storePurpuleColor: Colors.storeTextColor} /> 
-          <Text style={{ fontSize: scale(10) }}>Home</Text>
-        </View>
-      );
-    },
-    tabBarOnPress: ({ defaultHandler, navigation }) => {
-      const { routeName } = navigation.state;
-      if (routeName !== "CreateMatch") defaultHandler();
-    }
-  };
+  
 
   navigatePage = (page,content) =>{
     console.log(page,"sdafasd")
@@ -143,7 +132,6 @@ const mapStateToProps = state => {
  const mapDispatchToProps = dispatch => {
    console.log("dispatchAction");
    return {
-    //deleteBlogData: (id) => dispatch(HomeAction.homeRequest({'id' : id})),
     getHomeData: () => dispatch(HomeAction.homeRequest("s")),
     deleteB: (id) => { console.log("dispatchdelete");dispatch(HomeAction.deleteBlog({"id":id}))}
     
