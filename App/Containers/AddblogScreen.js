@@ -80,7 +80,7 @@ class AddblogScreen extends Component {
     this.props.navigation.goBack();
   }
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps.homeData,"nextprops");
+    
     if(nextProps.homeData.addBlogPayload ==true){
       this.callToast("Blog Added SuccessFully.","Success");
     }

@@ -11,7 +11,6 @@ import NearbyScreen from '../Containers/NearbyScreen';
 import EditblogScreen from '../Containers/EditblogScreen';
 import AddblogScreen from '../Containers/AddblogScreen';
 import ShowblogScreen from '../Containers/ShowblogScreen';
-import ShowstopScreen from '../Containers/ShowstopScreen';
 
 import styles from './Styles/NavigationStyles'
 

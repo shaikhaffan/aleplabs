@@ -14,15 +14,10 @@ import { call, put } from 'redux-saga/effects'
 import HomeActions from '../Redux/HomeRedux'
 // import { HomeSelectors } from '../Redux/HomeRedux'
 
-export function * getHome (api, action) {
-  const { data } = action
-  console.log("sagas",api,"data",data)
-  // get current data from Store
-  // const currentData = yield select(HomeSelectors.getData)
+export function * getHomeData (api, action) {
+  const { data } = action;
   // make the call to the api
-  const response = yield call(api.getPost)
- console.log(response);
-  // success?
+  const response = yield call(api.getHome);
   if (response.ok) {
     // You might need to change the response here - do this with a 'transform',
     // located in ../Transforms/. Otherwise, just pass the data back from the api.
@@ -32,13 +27,9 @@ export function * getHome (api, action) {
   }
 }
 
-export function * deleteBlog (api, action) {
+export function * deleteBlogData (api, action) {
   const { data } = action
-  console.log("sagas",api,"data",data)
-  // get current data from Store
-  // const currentData = yield select(HomeSelectors.getData)
-  // make the call to the api
-  const response = yield call(api.deletePost,data.id);
+  const response = yield call(api.deleteBlog,data.id);
   console.log(response.status);
 
   // success?
@@ -52,13 +43,9 @@ export function * deleteBlog (api, action) {
   
 }
 
-export function * addBlog (api, action) {
+export function * addBlogData (api, action) {
   const { data } = action
-  console.log("sagas",api,"data",data)
-  // get current data from Store
-  // const currentData = yield select(HomeSelectors.getData)
-  // make the call to the api
-  const response = yield call(api.addPost,data);
+  const response = yield call(api.addBlog,data);
   console.log(response);
 
   // success?
@@ -69,16 +56,11 @@ export function * addBlog (api, action) {
   } else {
     yield put(HomeActions.homeFailure())
   }
-  
 }
 
-export function * editBlog (api, action) {
+export function * editBlogData (api, action) {
   const { data } = action
-  // get current data from Store
-  // const currentData = yield select(HomeSelectors.getData)
-  // make the call to the api
-  const response = yield call(api.editPost,data);
-
+  const response = yield call(api.editBlog,data);
   // success?
   if (response.ok) {
     // You might need to change the response here - do this with a 'transform',

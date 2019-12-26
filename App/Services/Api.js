@@ -37,12 +37,12 @@ const create = (baseURL = 'https://jsonplaceholder.typicode.com/') => {
   const getRoot = () => api.get('')
   const getRate = () => api.get('rate_limit')
   const getUser = (username) => api.get('search/users', {q: username})
-  const deletePost = (id) => api.delete(`/posts/${id}`)
-  const getPost = () => api.get('posts')
-  const addPost = (data) => api.post('posts',{data, headers: {
+  const deleteBlog = (id) => api.delete(`/posts/${id}`)
+  const getHome = () => api.get('posts')
+  const addBlog = (data) => api.post('posts',{data, headers: {
     "Content-type": "application/json; charset=UTF-8"
   }})
-  const editPost = (data) => api.put(`posts/${1}`,{data, headers: {
+  const editBlog = (data) => api.put(`posts/${1}`,{data, headers: {
     "Content-type": "application/json; charset=UTF-8"
   }})
  
@@ -64,10 +64,10 @@ const create = (baseURL = 'https://jsonplaceholder.typicode.com/') => {
     getRoot,
     getRate,
     getUser,
-    getPost,
-    deletePost,
-    addPost,
-    editPost
+    getHome,
+    deleteBlog,
+    addBlog,
+    editBlog
   }
 }
 

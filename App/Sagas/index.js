@@ -13,7 +13,7 @@ import { HomeTypes } from '../Redux/HomeRedux'
 
 import { startup } from './StartupSagas'
 import { getUserAvatar } from './GithubSagas'
-import { getHome,addBlog ,deleteBlog , editBlog} from './HomeSagas'
+import { getHomeData,addBlogData ,deleteBlogData , editBlogData} from './HomeSagas'
 
 /* ------------- API ------------- */
 
@@ -25,10 +25,10 @@ const api = DebugConfig.useFixtures ? FixtureAPI : API.create()
 
 export default function * root () {
   yield all([
-    takeLatest(HomeTypes.EDIT_BLOG, editBlog,api),
-    takeLatest(HomeTypes.HOME_REQUEST, getHome,api),
-    takeLatest(HomeTypes.DELETE_BLOG, deleteBlog,api),
-    takeLatest(HomeTypes.ADD_BLOG, addBlog,api),
+    takeLatest(HomeTypes.EDIT_BLOG, editBlogData,api),
+    takeLatest(HomeTypes.HOME_REQUEST, getHomeData,api),
+    takeLatest(HomeTypes.DELETE_BLOG, deleteBlogData,api),
+    takeLatest(HomeTypes.ADD_BLOG, addBlogData,api),
     
    // takeLatest(HomeTypes.HOME_REQUEST, deleteBlog,api),
     // some sagas only receive an action
