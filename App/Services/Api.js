@@ -34,11 +34,9 @@ const create = (baseURL = 'https://jsonplaceholder.typicode.com/') => {
   // Since we can't hide from that, we embrace it by getting out of the
   // way at this level.
   //
-  const getRoot = () => api.get('')
-  const getRate = () => api.get('rate_limit')
   const getUser = (username) => api.get('search/users', {q: username})
-  const deleteBlog = (id) => api.delete(`/posts/${id}`)
-  const getHome = () => api.get('posts')
+  const deleteBlog = (id) => api.delete(`posts/${id}`)
+  const getHome = () => api.get('posts');
   const addBlog = (data) => api.post('posts',{data, headers: {
     "Content-type": "application/json; charset=UTF-8"
   }})
@@ -61,8 +59,6 @@ const create = (baseURL = 'https://jsonplaceholder.typicode.com/') => {
   //
   return {
     // a list of the API functions from step 2
-    getRoot,
-    getRate,
     getUser,
     getHome,
     deleteBlog,
@@ -73,5 +69,6 @@ const create = (baseURL = 'https://jsonplaceholder.typicode.com/') => {
 
 // let's return back our create method as the default.
 export default {
-  create
+  create,
+  
 }

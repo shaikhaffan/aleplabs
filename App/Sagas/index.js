@@ -32,7 +32,7 @@ export default function * root () {
     
    // takeLatest(HomeTypes.HOME_REQUEST, deleteBlog,api),
     // some sagas only receive an action
-    takeLatest(StartupTypes.STARTUP, startup),
+//    takeLatest(StartupTypes.STARTUP, startup),
 
     // some sagas receive extra parameters in addition to an action
    // takeLatest(GithubTypes.USER_REQUEST, getUserAvatar, api)

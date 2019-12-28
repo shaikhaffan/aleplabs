@@ -94,7 +94,7 @@ exports[`Storyshots DrawerButton Default 1`] = `
 >
   <View
     accessible={true}
-    clickable={true}
+    focusable={true}
     isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
@@ -128,7 +128,7 @@ exports[`Storyshots DrawerButton Default 1`] = `
 exports[`Storyshots FullButton Custom Style 1`] = `
 <View
   accessible={true}
-  clickable={false}
+  focusable={false}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -168,7 +168,7 @@ exports[`Storyshots FullButton Custom Style 1`] = `
 exports[`Storyshots FullButton Default 1`] = `
 <View
   accessible={true}
-  clickable={false}
+  focusable={false}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -208,7 +208,7 @@ exports[`Storyshots FullButton Default 1`] = `
 exports[`Storyshots RoundedButton Default 1`] = `
 <View
   accessible={true}
-  clickable={false}
+  focusable={false}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -248,7 +248,7 @@ exports[`Storyshots RoundedButton Default 1`] = `
 exports[`Storyshots RoundedButton Text as children 1`] = `
 <View
   accessible={true}
-  clickable={false}
+  focusable={false}
   isTVSelectable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}

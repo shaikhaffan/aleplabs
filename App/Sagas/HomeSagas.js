@@ -12,16 +12,18 @@
 
 import { call, put } from 'redux-saga/effects'
 import HomeActions from '../Redux/HomeRedux'
+
 // import { HomeSelectors } from '../Redux/HomeRedux'
 
 export function * getHomeData (api, action) {
   const { data } = action;
   // make the call to the api
   const response = yield call(api.getHome);
+  //console.log("response----??",response)
   if (response.ok) {
     // You might need to change the response here - do this with a 'transform',
     // located in ../Transforms/. Otherwise, just pass the data back from the api.
-    yield put(HomeActions.homeSuccess(response.data))
+    yield put(HomeActions.homeSuccess(response.ok))
   } else {
     yield put(HomeActions.homeFailure())
   }

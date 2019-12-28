@@ -9,11 +9,13 @@ const stepper = (fn) => (mock) => fn.next(mock).value
 test('first calls API', () => {
   const step = stepper(getUserAvatar(FixtureAPI, {username: 'taco'}))
   // first yield is API
+  
   expect(step()).toEqual(call(FixtureAPI.getUser, 'taco'))
 })
 
 test('success path', () => {
-  const response = FixtureAPI.getUser('taco')
+  const response = FixtureAPI.getUser('taco');
+//  console.log(response,"githubsaga")
   const step = stepper(getUserAvatar(FixtureAPI, {username: 'taco'}))
   // first step API
   step()

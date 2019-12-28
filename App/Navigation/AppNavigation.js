@@ -43,7 +43,7 @@ const PrimaryNav = createStackNavigator({
   ShowblogScreen : {screen : ShowblogScreen},
   EditblogScreen :{screen : EditblogScreen},
   AddblogScreen : {screen : AddblogScreen},
-  topScreen : {screen : ShowstopScreen}
+  
 },
 {
   // Default config for all screens
