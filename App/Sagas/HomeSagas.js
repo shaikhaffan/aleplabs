@@ -23,7 +23,7 @@ export function * getHomeData (api, action) {
   if (response.ok) {
     // You might need to change the response here - do this with a 'transform',
     // located in ../Transforms/. Otherwise, just pass the data back from the api.
-    yield put(HomeActions.homeSuccess(response.ok))
+    yield put(HomeActions.homeSuccess(response.data))
   } else {
     yield put(HomeActions.homeFailure())
   }

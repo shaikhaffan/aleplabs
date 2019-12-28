@@ -28,7 +28,7 @@ test('success path', async () => {
   // Get the avatar Url from the response
   //const firstUser = path(['data', 'items'], response)[0]
  // const avatar = firstUser.avatar_url
-  expect(stepResponse).toEqual(put(HomeActions.homeSuccess(true)))
+expect(stepResponse).toEqual(put(HomeActions.homeSuccess(response.data)))
 })
 
 test('failure path', () => {
