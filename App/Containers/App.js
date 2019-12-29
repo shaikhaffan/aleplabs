@@ -5,7 +5,8 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import RootContainer from './RootContainer'
 import createStore from '../Redux'
-
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import SafeAreaView from 'react-native-safe-area-view';
 //import SafeAreaView from 'react-native-safe-area-view';
 
 import {Fonts,Colors} from '../Themes/index'
@@ -26,9 +27,11 @@ class App extends Component {
   render () {
     return (
         <Provider store={store}>          
-						<SafeAreaView style={{ flex:1}} forceInset={{ top:'never',bottom: 'never' }} >
+					<SafeAreaProvider>
+							<SafeAreaView style={{ flex:1}} forceInset={{  }} >
                 <RootContainer />
                 </SafeAreaView>
+						</SafeAreaProvider>
         </Provider>      
         
         
