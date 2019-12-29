@@ -57,7 +57,7 @@ export default class Blogcomponent extends Component {
                   <View><Text>Enter Content</Text></View>
                   <View>
                   <TextInput
-                    multiline
+                    multiline={true}
                     numberOfLines={4}
                     style={{ textAlignVertical:"top" ,borderColor: 'gray', borderWidth: 1 }}
                     value={this.props.body}
