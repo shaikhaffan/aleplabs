@@ -47,11 +47,15 @@ class NearbyScreen extends Component {
       if (routeName !== "CreateMatch") defaultHandler();
     }
   };
+
+  goBack = ()=>{
+    this.props.navigation.goBack();
+  }
   render () {
     return (
       <Container>
     
-      <HeaderComponent navigatePage={this.navigatePage} title="nearby" screen="nearby"/>
+      <HeaderComponent goBack={this.goBack} navigatePage={this.navigatePage} title="nearby" screen="nearby"/>
       <Content style={{}}>
         <View><Text>Near By Screen</Text></View>      
       </Content>

@@ -48,7 +48,9 @@ class RecentScreen extends Component {
       if (routeName !== "CreateMatch") defaultHandler();
     }
   };
-
+  goBack = ()=>{
+    this.props.navigation.goBack();
+  }
 
   componentDidMount(){
    // SplashScreen.hide()
@@ -58,7 +60,7 @@ class RecentScreen extends Component {
     return (
       <Container>
     
-      <HeaderComponent navigatePage={this.navigatePage} title="Recent" screen="recent"/>
+      <HeaderComponent goBack={this.goBack} navigatePage={this.navigatePage} title="Recent" screen="recent"/>
       <Content style={{}}>
         <View><Text>Recent Screen</Text></View>      
       </Content>

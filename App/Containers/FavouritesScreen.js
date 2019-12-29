@@ -47,12 +47,15 @@ class FavouritesScreen extends Component {
       if (routeName !== "CreateMatch") defaultHandler();
     }
   };
+  goBack = ()=>{
+    this.props.navigation.goBack();
+  }
 
   render () {
     return (
       <Container>
     
-      <HeaderComponent navigatePage={this.navigatePage} title="Favourites" screen="favourites"/>
+      <HeaderComponent goBack={this.goBack} navigatePage={this.navigatePage} title="Favourites" screen="favourites"/>
       <Content style={{}}>
         <View><Text>Recent Screen</Text></View>      
       </Content>
