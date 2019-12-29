@@ -47,6 +47,7 @@ export default class Blog extends Component {
       <View >
         <FlatList
             scrollEnabled={false}
+            showsHorizontalScrollIndicator={false}
              data={this.props.data}
              disableVirtualization={true}
              removeClippedSubviews = {true}
