@@ -28,7 +28,7 @@ class App extends Component {
     return (
         <Provider store={store}>          
 					<SafeAreaProvider>
-							<SafeAreaView style={{ flex:1}} forceInset={{  }} >
+							<SafeAreaView style={{ flex:1}} forceInset={{ top:"never", bottom:"never" }} >
                 <RootContainer />
                 </SafeAreaView>
 						</SafeAreaProvider>
