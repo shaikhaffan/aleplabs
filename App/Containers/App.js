@@ -1,4 +1,4 @@
-import {  Text,View, KeyboardAvoidingView,ScrollView ,Platform,SafeAreaView} from 'react-native'
+import {  Text,View, KeyboardAvoidingView,ScrollView ,Platform} from 'react-native'
 import '../Config'
 import DebugConfig from '../Config/DebugConfig'
 import React, { Component } from 'react'
