@@ -4,6 +4,15 @@ import { scale } from "react-native-size-matters";
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { ApplicationStyles,Colors } from '../Themes';
 import { connect } from 'react-redux'
+import Blog from '../Components/Blog';
+import {
+  Container,
+  Content,
+  Toast,
+  Root
+} from "native-base";
+
+import HeaderComponent from '../Components/Header';
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
@@ -40,11 +49,13 @@ class NearbyScreen extends Component {
   };
   render () {
     return (
-      <ScrollView style={styles.container}>
-        <KeyboardAvoidingView behavior='position'>
-          <Text>NearbyScreen</Text>
-        </KeyboardAvoidingView>
-      </ScrollView>
+      <Container>
+    
+      <HeaderComponent navigatePage={this.navigatePage} title="nearby" screen="nearby"/>
+      <Content style={{}}>
+        <View><Text>Near By Screen</Text></View>      
+      </Content>
+    </Container>
     )
   }
 }
